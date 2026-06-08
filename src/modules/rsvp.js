@@ -78,7 +78,7 @@ export function initRsvp() {
       document.getElementById('ok-ttl').textContent = 'Рақмет!'
       document.getElementById('ok-msg').textContent = selectedAtt === 'no'
         ? (lang === 'kz' ? `${name}, жауабыңыз үшін рақмет 💌` : `${name}, спасибо за ответ 💌`)
-        : (lang === 'kz' ? `${name}, 29 қыркүйекте күтеміз! ✨` : `${name}, ждём вас 29 сентября! ✨`)
+        : (lang === 'kz' ? `${name}, 29 тамызда күтеміз! ✨` : `${name}, ждём вас 29 августа! ✨`)
 
       // Update counter
       const numEl = document.getElementById('rsvp-count')
