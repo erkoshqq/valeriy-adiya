@@ -76,7 +76,7 @@ body {
 }
 .loader-names {
   font-family: var(--ff-d);
-  font-size: clamp(18px, 4vw, 28px);
+  font-size: clamp(30px, 7.5vw, 60px);
   font-weight: 300; letter-spacing: .12em;
   color: var(--text);
 }
