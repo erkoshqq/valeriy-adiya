@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="kz">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Валерий & Адия · 29.08.2026</title>
+  <meta name="description" content="Валерий мен Адияның үйлену тойына шақырамыз · 29 қыркүйек 2026 · Семей" />
+  <meta property="og:title" content="Валерий & Адия" />
+  <meta property="og:description" content="29 қыркүйек 2026 · Семей · 17:00" />
+  <meta property="og:image" content="/assets/couple-gold.jpg" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Montserrat:wght@200;300;400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/src/styles/main.css" />
+</head>
+<body>
+
+  <div id="cur"></div>
+  <div id="cur-r"></div>
+  <canvas id="particles-canvas"></canvas>
+
+  <!-- Loader -->
+  <div id="loader">
+    <div class="loader-ampersand">&</div>
+    <div class="loader-names">Валерий <span>&</span> Адия</div>
+    <div class="loader-bar"></div>
+    <div class="loader-date">29 · 08 · 2026</div>
+    <button class="loader-btn" id="loader-btn">
+      <span class="loader-btn-text" data-kz="Тойға кіру" data-ru="Открыть приглашение">Тойға кіру</span>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+        <path d="M12 5v14M5 12l7 7 7-7"/>
+      </svg>
+    </button>
+  </div>
+
+  <!-- Lang -->
+  <nav id="lang-sw">
+    <button class="lang-btn active" data-lang="kz">ҚАЗ</button>
+    <button class="lang-btn"        data-lang="ru">РУС</button>
+  </nav>
+
+  <!-- Music -->
+  <button id="music-btn" aria-label="Музыка">
+    <div class="vinyl-ring"></div>
+    <svg id="ic-play"  viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+    <svg id="ic-pause" viewBox="0 0 24 24" hidden><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>
+  </button>
+  <audio id="bg-audio" loop preload="none">
+    <source src="/assets/music.mp3" type="audio/mpeg" />
+  </audio>
+
+  <!-- ═══ HERO ═══ -->
+  <section id="hero">
+    <div class="hero-bg">
+      <img src="/assets/couple-gold.jpg" alt="Валерий & Адия" class="hero-img" />
+      <div class="hero-overlay"></div>
+    </div>
+
+    <div class="hero-content">
+      <p class="hero-eyebrow"
+        data-kz="Үйлену тойына шақырамыз"
+        data-ru="Приглашение на свадьбу">
+        Үйлену тойына шақырамыз
+      </p>
+
+      <h1 class="hero-names">
+        <span class="hero-name-groom">Валерий</span>
+        <span class="hero-amp">&</span>
+        <span class="hero-name-bride">Адия</span>
+      </h1>
+
+      <div class="hero-divider"><span></span><span class="hero-divider-diamond">◆</span><span></span></div>
+
+      <p class="hero-date-line">
+        <span data-kz="29 тамыз 2026" data-ru="29 август 2026">29 тамыз 2026</span>
+        <span class="hero-date-sep">·</span>
+        <span data-kz="Семей қаласы" data-ru="г. Семей">Семей қаласы</span>
+      </p>
+
+      <!-- Countdown -->
+      <div class="hero-cd" id="countdown">
+        <div class="cd-u">
+          <span class="cd-n" id="cd-d">00</span>
+          <span class="cd-l" data-kz="Күн" data-ru="Дней">Күн</span>
+        </div>
+        <span class="cd-dot">·</span>
+        <div class="cd-u">
+          <span class="cd-n" id="cd-h">00</span>
+          <span class="cd-l" data-kz="Сағат" data-ru="Часов">Сағат</span>
+        </div>
+        <span class="cd-dot">·</span>
+        <div class="cd-u">
+          <span class="cd-n" id="cd-m">00</span>
+          <span class="cd-l" data-kz="Минут" data-ru="Минут">Минут</span>
+        </div>
+        <span class="cd-dot">·</span>
+        <div class="cd-u">
+          <span class="cd-n" id="cd-s">00</span>
+          <span class="cd-l" data-kz="Секунд" data-ru="Секунд">Секунд</span>
+        </div>
+      </div>
+
+      <div class="hero-ctas">
+        <a href="#rsvp-sec" class="btn-gold">
+          <span data-kz="Қатысуды растау" data-ru="Подтвердить присутствие">Қатысуды растау</span>
+        </a>
+        <a href="#location" class="btn-outline">
+          <span data-kz="Картаны ашу" data-ru="Открыть карту">Картаны ашу</span>
+        </a>
+      </div>
+    </div>
+
+    <div class="hero-scroll-hint">
+      <div class="scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- ═══ QUOTE ═══ -->
+  <section id="quote-sec" class="sec-pad sec-center">
+    <div class="quote-wrap reveal">
+      <div class="quote-mark">"</div>
+      <p class="quote-text"
+        data-kz="Шын махаббат — бұл бір-бірін қарап отырмай, бірге алдыға қарау."
+        data-ru="Любовь — это не смотреть друг на друга, а смотреть вместе в одном направлении.">
+        Шын махаббат — бұл бір-бірін қарап отырмай, бірге алдыға қарау.
+      </p>
+      <p class="quote-author">— Antoine de Saint-Exupéry</p>
+    </div>
+  </section>
+
+  <!-- ═══ HOST ═══ -->
+  <section id="host" class="sec-pad sec-center">
+    <p class="sec-label reveal"
+      data-kz="Той иесі"
+      data-ru="Хозяйка торжества">
+      Той иесі
+    </p>
+    <div class="host-name reveal r-delay-1">Альфия</div>
+    <div class="orn-div reveal r-delay-2" style="max-width:240px;margin-left:auto;margin-right:auto">
+      <span class="orn-sym">◆ ◆ ◆</span>
+    </div>
+  </section>
+
+  <!-- ═══ DETAILS ═══ -->
+  <section id="details" class="sec-pad sec-center">
+    <p class="sec-label reveal"
+      data-kz="Той туралы ақпарат"
+      data-ru="О мероприятии">
+      Той туралы ақпарат
+    </p>
+    <h2 class="sec-title reveal r-delay-1"
+      data-kz="Күні мен <em>орны</em>"
+      data-ru="Дата и <em>место</em>">
+      Күні мен <em>орны</em>
+    </h2>
+
+    <div class="details-grid">
+      <div class="detail-card reveal r-delay-1">
+        <div class="detail-icon">◈</div>
+        <p class="detail-label" data-kz="Күні" data-ru="Дата">Күні</p>
+        <p class="detail-value" data-kz="29 тамыз 2026" data-ru="29 август 2026">29 тамыз 2026</p>
+        <p class="detail-sub" data-kz="сенбі" data-ru="суббота">сенбі</p>
+      </div>
+      <div class="detail-card reveal r-delay-2">
+        <div class="detail-icon">◈</div>
+        <p class="detail-label" data-kz="Уақыты" data-ru="Время">Уақыты</p>
+        <p class="detail-value">17:00</p>
+        <p class="detail-sub" data-kz="Қонақтарды қабылдау" data-ru="Сбор гостей">Қонақтарды қабылдау</p>
+      </div>
+      <div class="detail-card reveal r-delay-3">
+        <div class="detail-icon">◈</div>
+        <p class="detail-label" data-kz="Мекен-жайы" data-ru="Адрес">Мекен-жайы</p>
+        <p class="detail-value" data-kz="«Астана» мейрамханасы" data-ru="Ресторан «Астана»">«Астана» мейрамханасы</p>
+        <p class="detail-sub" data-kz="Семей қаласы" data-ru="г. Семей">Семей қаласы</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ LOCATION ═══ -->
+  <section id="location" class="sec-pad sec-center">
+    <p class="sec-label reveal" data-kz="Мекен-жай" data-ru="Местоположение">Мекен-жай</p>
+    <h2 class="sec-title reveal r-delay-1"
+      data-kz="Той өтетін <em>орын</em>"
+      data-ru="Место <em>торжества</em>">
+      Той өтетін <em>орын</em>
+    </h2>
+
+    <div class="location-cards reveal r-delay-2">
+      <div class="location-card">
+        <div class="detail-icon">◈</div>
+        <p class="detail-label" data-kz="Қала" data-ru="Город">Қала</p>
+        <p class="detail-value" data-kz="Семей қаласы" data-ru="г. Семей">Семей қаласы</p>
+      </div>
+      <div class="location-card">
+        <div class="detail-icon">◈</div>
+        <p class="detail-label" data-kz="Мейрамхана" data-ru="Ресторан">Мейрамхана</p>
+        <p class="detail-value" data-kz="«Астана»" data-ru="«Астана»">«Астана»</p>
+      </div>
+    </div>
+
+    <div class="map-wrap reveal r-delay-3">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d87788!2d80.2275!3d50.4111!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x42de96b4d7bb72e3%3A0x9d6a7e3f8f8f8f8f!2z0KHQtdC80LXQudA!5e0!3m2!1sru!2skz!4v1690000000000"
+        allowfullscreen loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+        title="Семей қаласы">
+      </iframe>
+    </div>
+
+    <a href="https://maps.google.com/?q=Semey,Kazakhstan"
+      target="_blank" rel="noopener"
+      class="btn-outline reveal r-delay-3"
+      style="display:inline-flex;margin-top:24px">
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+        <circle cx="12" cy="10" r="3"/>
+      </svg>
+      <span data-kz="Бағыт құру" data-ru="Построить маршрут">Бағыт құру</span>
+    </a>
+  </section>
+
+  <!-- ═══ PROGRAM ═══ -->
+  <section id="program" class="sec-pad sec-center">
+    <p class="sec-label reveal" data-kz="Той бағдарламасы" data-ru="Программа дня">Той бағдарламасы</p>
+    <h2 class="sec-title reveal r-delay-1"
+      data-kz="Той <em>күні</em>"
+      data-ru="День <em>торжества</em>">
+      Той <em>күні</em>
+    </h2>
+
+    <div class="program-timeline">
+      <div class="prog-item reveal r-delay-1">
+        <div class="prog-time">17:00</div>
+        <div class="prog-dot"><span></span></div>
+        <div class="prog-info">
+          <p class="prog-title" data-kz="Қонақтарды қарсы алу" data-ru="Сбор гостей">Қонақтарды қарсы алу</p>
+          <p class="prog-desc" data-kz="Қош келдіңіздер, фотосессия" data-ru="Приветствие, фотозона">Қош келдіңіздер, фотосессия</p>
+        </div>
+      </div>
+      <div class="prog-item reveal r-delay-2">
+        <div class="prog-time">18:00</div>
+        <div class="prog-dot"><span></span></div>
+        <div class="prog-info">
+          <p class="prog-title" data-kz="Тойдың басталуы" data-ru="Начало торжества">Тойдың басталуы</p>
+          <p class="prog-desc" data-kz="Салтанатты кеш ашылады" data-ru="Открытие праздничного вечера">Салтанатты кеш ашылады</p>
+        </div>
+      </div>
+      <div class="prog-item reveal r-delay-3">
+        <div class="prog-time">18:30</div>
+        <div class="prog-dot"><span></span></div>
+        <div class="prog-info">
+          <p class="prog-title" data-kz="Беташар" data-ru="Беташар">Беташар</p>
+          <p class="prog-desc" data-kz="Дәстүрлі беташар рәсімі" data-ru="Традиционный обряд беташар">Дәстүрлі беташар рәсімі</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ GALLERY ═══ -->
+  <section id="gallery-sec" class="sec-pad sec-center">
+    <p class="sec-label reveal" data-kz="Біздің фотолар" data-ru="Наши фото">Біздің фотолар</p>
+    <h2 class="sec-title reveal r-delay-1"
+      data-kz="Валерий <em>&</em> Адия"
+      data-ru="Валерий <em>&</em> Адия">
+      Валерий <em>&</em> Адия
+    </h2>
+
+    <div class="slider-wrap reveal r-delay-2">
+      <div class="slider-track" id="slider-track">
+        <div class="slide"><img src="/assets/couple1.jpeg" alt="Валерий & Адия" /></div>
+        <div class="slide"><img src="/assets/couple2.jpeg" alt="Валерий & Адия" /></div>
+        <div class="slide"><img src="/assets/couple-door.jpg" alt="Валерий & Адия" /></div>
+        <div class="slide"><img src="/assets/couple-bw.jpg"   alt="Валерий & Адия" /></div>
+      </div>
+      <button class="slider-arrow slider-prev" id="slider-prev" aria-label="Назад">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><polyline points="15 18 9 12 15 6"/></svg>
+      </button>
+      <button class="slider-arrow slider-next" id="slider-next" aria-label="Вперёд">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><polyline points="9 18 15 12 9 6"/></svg>
+      </button>
+      <div class="slider-dots" id="slider-dots"></div>
+      <div class="slider-progress"><div class="slider-progress-bar" id="slider-progress-bar"></div></div>
+    </div>
+  </section>
+
+  <!-- ═══ WISHES ═══ -->
+  <section id="wishes-sec" class="sec-pad sec-center">
+    <p class="sec-label reveal" data-kz="Тілектер" data-ru="Пожелания">Тілектер</p>
+    <h2 class="sec-title reveal r-delay-1"
+      data-kz="Жас жұпқа <em>тілектер</em>"
+      data-ru="Пожелания <em>паре</em>">
+      Жас жұпқа <em>тілектер</em>
+    </h2>
+
+    <div class="wishes-slider reveal r-delay-2">
+      <div class="wishes-track" id="wishes-track"></div>
+      <button class="wishes-arrow wishes-prev" id="wishes-prev" aria-label="Назад">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><polyline points="15 18 9 12 15 6"/></svg>
+      </button>
+      <button class="wishes-arrow wishes-next" id="wishes-next" aria-label="Вперёд">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><polyline points="9 18 15 12 9 6"/></svg>
+      </button>
+      <div class="wishes-dots" id="wishes-dots"></div>
+    </div>
+
+    <div class="wish-input-wrap reveal r-delay-3">
+      <input type="text" id="wish-name"
+        placeholder="Атыңыз"
+        data-kz-placeholder="Атыңыз"
+        data-ru-placeholder="Ваше имя" />
+      <textarea id="wish-text"
+        placeholder="Жас жұпқа тілегіңізді жазыңыз..."
+        data-kz-placeholder="Жас жұпқа тілегіңізді жазыңыз..."
+        data-ru-placeholder="Напишите пожелание паре..."></textarea>
+      <button class="btn-gold" id="wish-submit">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/>
+        </svg>
+        <span data-kz="Тілек жіберу" data-ru="Отправить пожелание">Тілек жіберу</span>
+      </button>
+    </div>
+  </section>
+
+  <!-- ═══ SEE YOU ═══ -->
+  <section id="seeyou" class="sec-pad sec-center">
+    <div class="seeyou-wrap reveal">
+      <p class="seeyou-label" data-kz="Күтіп қалды" data-ru="До встречи">Күтіп қалды</p>
+      <h2 class="seeyou-title"
+        data-kz="Тойда кездескенше!"
+        data-ru="До встречи на свадьбе!">
+        Тойда кездескенше!
+      </h2>
+      <p class="seeyou-date">29 · 09 · 2026</p>
+      <div class="seeyou-hearts">◆ ◆ ◆</div>
+    </div>
+  </section>
+
+  <!-- ═══ RSVP ═══ -->
+  <section id="rsvp-sec" class="sec-pad sec-center">
+    <p class="sec-label reveal" data-kz="Растау" data-ru="Подтверждение">Растау</p>
+    <h2 class="sec-title reveal r-delay-1"
+      data-kz="Бізбен <em>бірге боласыз ба?</em>"
+      data-ru="Будете <em>с нами?</em>">
+      Бізбен <em>бірге боласыз ба?</em>
+    </h2>
+    <p class="sec-sub reveal r-delay-2"
+      data-kz="2026 жылдың 20 қыркүйегіне дейін растауыңызды сұраймыз"
+      data-ru="Просим подтвердить присутствие до 20 сентября 2026">
+      2026 жылдың 20 қыркүйегіне дейін растауыңызды сұраймыз
+    </p>
+
+    <!-- Counter -->
+    <div class="rsvp-counter reveal r-delay-2">
+      <div class="rsvp-counter-num" id="rsvp-count">—</div>
+      <div class="rsvp-counter-label"
+        data-kz="қонақ қатысуын растады"
+        data-ru="гостей уже подтвердили">
+        қонақ қатысуын растады
+      </div>
+    </div>
+
+    <div class="rsvp-form reveal r-delay-3">
+      <form id="rsvp-form" novalidate>
+        <div class="fg" id="fg-name">
+          <label data-kz="Аты-жөні" data-ru="Имя и фамилия">Аты-жөні</label>
+          <input type="text" id="f-name" autocomplete="name"
+            placeholder="Атыңызды енгізіңіз"
+            data-kz-placeholder="Атыңызды енгізіңіз"
+            data-ru-placeholder="Введите ваше имя" />
+          <div class="ferr" data-kz="Атыңызды енгізіңіз" data-ru="Введите ваше имя">Атыңызды енгізіңіз</div>
+        </div>
+
+        <div class="fg" id="fg-att">
+          <label data-kz="Жауабыңыз" data-ru="Ваш ответ">Жауабыңыз</label>
+          <div class="choices">
+            <button type="button" class="choice" data-val="coming">
+              <span data-kz="🎉 Келемін!" data-ru="🎉 Приду!">🎉 Келемін!</span>
+            </button>
+            <button type="button" class="choice" data-val="pair">
+              <span data-kz="👫 Жұппен" data-ru="👫 С парой">👫 Жұппен</span>
+            </button>
+            <button type="button" class="choice" data-val="no">
+              <span data-kz="😔 Келе алмаймын" data-ru="😔 Не смогу">😔 Келе алмаймын</span>
+            </button>
+          </div>
+          <div class="ferr" data-kz="Опцияны таңдаңыз" data-ru="Выберите вариант">Опцияны таңдаңыз</div>
+        </div>
+
+        <button type="submit" class="btn-rsvp" id="sub-btn">
+          <span data-kz="Жауап жіберу" data-ru="Отправить ответ">Жауап жіберу</span>
+        </button>
+      </form>
+
+      <div id="rsvp-ok" hidden>
+        <div class="ok-icon">✦</div>
+        <h3 id="ok-ttl">Рақмет!</h3>
+        <p id="ok-msg"></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ FOOTER ═══ -->
+  <footer>
+    <div class="reveal">
+      <div class="footer-amp">&</div>
+      <p class="footer-names">Валерий & Адия</p>
+      <p class="footer-date">29 · 09 · 2026 · Семей</p>
+      <div class="footer-divider"><span></span><span>◆</span><span></span></div>
+      <p class="footer-phrase" id="fp"
+        data-kz="Қуанышымыздың куәсі болыңыздар!"
+        data-ru="Будем счастливы разделить этот день с вами.">
+        Қуанышымыздың куәсі болыңыздар!
+      </p>
+    </div>
+  </footer>
+
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>

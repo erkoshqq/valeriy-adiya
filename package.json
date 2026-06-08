@@ -1,0 +1,13 @@
+{
+  "name": "wedding-valery-adiya",
+  "version": "1.0.0",
+  "description": "Валерий & Адия · 29 қыркүйек 2026",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "vite": "^5.4.0"
+  }
+}
