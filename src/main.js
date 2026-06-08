@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initLoader()
   initLoaderBtn()
   initCountdown()
-  initLang('kz')
+  initLang('ru')
   initMusic()
   initReveal()
   initSlider()

@@ -24,9 +24,12 @@ function buildCard(w, i) {
 function renderSlider(track, dotsWrap) {
   track.innerHTML = ''; dotsWrap.innerHTML = ''
   if (!wishes.length) {
+    const lang = getLang()
     track.innerHTML = `<div class="wish-card">
       <span class="wish-card-icon">✨</span>
-      <p class="wish-card-text" style="opacity:.4;text-align:center">Бірінші болып тілек қалдырыңыз</p>
+      <p class="wish-card-text" style="opacity:.4;text-align:center">
+        ${lang === 'kz' ? 'Бірінші болып тілек қалдырыңыз' : 'Оставьте первое пожелание'}
+      </p>
     </div>`
     return
   }
