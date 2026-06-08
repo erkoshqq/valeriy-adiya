@@ -2,20 +2,20 @@
    TOKENS — Dark Luxury Gold
 ════════════════════════════════════════ */
 :root {
-  --dark:       #0D0B08;
-  --dark2:      #151210;
-  --dark3:      #1E1A14;
-  --dark4:      #261F16;
-  --gold:       #C9A55A;
-  --goldlt:     #E2C07A;
-  --golddim:    rgba(201, 165, 90, 0.18);
-  --goldborder: rgba(201, 165, 90, 0.22);
-  --cream:      #F5F0E8;
-  --creamlt:    rgba(245, 240, 232, 0.08);
-  --text:       #F0EAD8;
-  --textmid:    rgba(240, 234, 216, 0.55);
-  --glass:      rgba(21, 18, 14, 0.6);
-  --glassborder:rgba(201, 165, 90, 0.2);
+  --dark:       #F5F0E8;
+  --dark2:      #EDE8DF;
+  --dark3:      #E6DFD4;
+  --dark4:      #DDD5C8;
+  --gold:       #B8965A;
+  --goldlt:     #C9A96E;
+  --golddim:    rgba(184, 150, 90, 0.14);
+  --goldborder: rgba(184, 150, 90, 0.28);
+  --cream:      #1A1410;
+  --creamlt:    rgba(26, 20, 16, 0.07);
+  --text:       #1A1410;
+  --textmid:    rgba(26, 20, 16, 0.50);
+  --glass:      rgba(245, 240, 232, 0.75);
+  --glassborder:rgba(184, 150, 90, 0.25);
 
   --ff-d: 'Cormorant Garamond', serif;
   --ff-b: 'Montserrat', sans-serif;
@@ -41,14 +41,14 @@ body {
 ════════════════════════════════════════ */
 #cur {
   position: fixed; width: 7px; height: 7px;
-  background: var(--gold); border-radius: 50%;
+  background: #1A1410; border-radius: 50%;
   pointer-events: none; z-index: 9999;
   transform: translate(-50%, -50%);
   transition: transform .15s;
 }
 #cur-r {
   position: fixed; width: 28px; height: 28px;
-  border: 1px solid var(--gold); border-radius: 50%;
+  border: 1px solid; border-color: rgba(26, 20, 16, 0.35); border-radius: 50%;
   pointer-events: none; z-index: 9998;
   transform: translate(-50%, -50%);
   opacity: .45;
@@ -60,7 +60,7 @@ body {
 ════════════════════════════════════════ */
 #loader {
   position: fixed; inset: 0; z-index: 8000;
-  background: var(--dark);
+  background: #F5F0E8;
   display: flex; flex-direction: column;
   align-items: center; justify-content: center; gap: 16px;
   transition: opacity .9s ease, visibility .9s;
@@ -176,13 +176,13 @@ body {
 .hero-img {
   width: 100%; height: 100%;
   object-fit: cover; object-position: center 20%;
-  filter: brightness(.75) contrast(1.05) saturate(.9);
+  filter: brightness(.92) contrast(1.02) saturate(.95);
 }
 .hero-overlay {
   position: absolute; inset: 0;
   background:
-    linear-gradient(to top, rgba(13,11,8,.95) 0%, rgba(13,11,8,.4) 40%, rgba(13,11,8,.15) 70%, transparent 100%),
-    linear-gradient(to bottom, rgba(13,11,8,.5) 0%, transparent 30%);
+    linear-gradient(to top, rgba(245,240,232,.92) 0%, rgba(245,240,232,.35) 40%, rgba(245,240,232,.10) 70%, transparent 100%),
+    linear-gradient(to bottom, rgba(245,240,232,.45) 0%, transparent 30%);
 }
 
 .hero-content {
@@ -275,11 +275,11 @@ body {
   background: var(--gold);
   font-family: var(--ff-b); font-size: 10px;
   letter-spacing: .18em; text-transform: uppercase;
-  color: var(--dark); cursor: none; text-decoration: none;
+  color: #FAF6EF;
+  box-shadow: 0 8px 32px rgba(184, 150, 90, .22);
   transition: all .35s;
-  box-shadow: 0 8px 32px rgba(201, 165, 90, .3);
 }
-.btn-gold:hover { background: var(--goldlt); transform: translateY(-2px); box-shadow: 0 14px 40px rgba(201,165,90,.4); }
+.btn-gold:hover { background: var(--goldlt); transform: translateY(-2px); box-shadow: 0 14px 40px rgba(184, 150, 90, .32); }
 
 .btn-outline {
   display: inline-flex; align-items: center; gap: 8px;
@@ -385,7 +385,7 @@ section   { position:relative;z-index:2; }
   box-shadow: 0 8px 40px rgba(0,0,0,.4);
   height: 310px; max-width: 780px;
 }
-.map-wrap iframe { width:100%;height:100%;border:0;filter:grayscale(.5) brightness(.8) sepia(.2); }
+.map-wrap iframe { width:100%;height:100%;border:0;filter: grayscale(.15) brightness(1) sepia(.08); }
 
 /* ════════════════════════════════════════
    PROGRAM
@@ -461,7 +461,7 @@ section   { position:relative;z-index:2; }
   width: 10px; height: 10px;
   border-radius: 50%;
   background: var(--gold);
-  box-shadow: 0 0 0 4px var(--dark), 0 0 0 5px var(--goldborder);
+  box-shadow: 0 0 0 4px #F5F0E8, 0 0 0 5px var(--goldborder);
   display: block;
 }
 
@@ -588,8 +588,8 @@ section   { position:relative;z-index:2; }
 
 /* Skeleton */
 .wish-skeleton {
-  background:linear-gradient(90deg,var(--dark4) 25%,var(--dark3) 50%,var(--dark4) 75%);
-  background-size:200% 100%;
+  background: linear-gradient(90deg, #DDD5C8 25%, #E6DFD4 50%, #DDD5C8 75%);
+  background-size: 200% 100%;
   animation:shimmer 1.4s infinite;
   border-radius:4px;height:13px;margin:5px 0;
   color:transparent!important;min-width:140px;
