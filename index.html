@@ -15,6 +15,41 @@
   <link rel="stylesheet" href="/src/styles/main.css" />
 </head>
 <body>
+  <!-- Декоративные SVG элементы -->
+<div class="deco-fixed deco-tl" aria-hidden="true">
+  <svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <!-- Ветка -->
+    <path d="M180 180 Q120 120 40 20" stroke="#B8965A" stroke-width="1" opacity=".25"/>
+    <path d="M160 170 Q100 110 30 30" stroke="#B8965A" stroke-width=".7" opacity=".15"/>
+    <!-- Листья -->
+    <ellipse cx="80" cy="80" rx="12" ry="6" transform="rotate(-45 80 80)" fill="#B8965A" opacity=".15"/>
+    <ellipse cx="60" cy="60" rx="10" ry="5" transform="rotate(-40 60 60)" fill="#B8965A" opacity=".12"/>
+    <ellipse cx="100" cy="100" rx="14" ry="6" transform="rotate(-50 100 100)" fill="#B8965A" opacity=".13"/>
+    <ellipse cx="45" cy="45" rx="8"  ry="4"  transform="rotate(-35 45 45)"  fill="#B8965A" opacity=".1"/>
+    <!-- Цветки -->
+    <circle cx="70"  cy="72"  r="4" fill="#B8965A" opacity=".2"/>
+    <circle cx="110" cy="108" r="3" fill="#CCA96E" opacity=".18"/>
+    <circle cx="50"  cy="52"  r="3" fill="#B8965A" opacity=".15"/>
+    <!-- Маленькие точки -->
+    <circle cx="130" cy="130" r="1.5" fill="#B8965A" opacity=".2"/>
+    <circle cx="90"  cy="92"  r="1"   fill="#B8965A" opacity=".15"/>
+    <circle cx="55"  cy="58"  r="1.2" fill="#CCA96E" opacity=".18"/>
+  </svg>
+</div>
+
+<div class="deco-fixed deco-br" aria-hidden="true">
+  <svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M20 20 Q80 80 160 180" stroke="#B8965A" stroke-width="1" opacity=".25"/>
+    <ellipse cx="120" cy="120" rx="12" ry="6" transform="rotate(45 120 120)" fill="#B8965A" opacity=".15"/>
+    <ellipse cx="140" cy="140" rx="10" ry="5" transform="rotate(40 140 140)" fill="#B8965A" opacity=".12"/>
+    <ellipse cx="100" cy="100" rx="14" ry="6" transform="rotate(50 100 100)" fill="#B8965A" opacity=".13"/>
+    <circle cx="130" cy="128" r="4" fill="#B8965A" opacity=".2"/>
+    <circle cx="90"  cy="92"  r="3" fill="#CCA96E" opacity=".18"/>
+    <circle cx="150" cy="148" r="2" fill="#B8965A" opacity=".15"/>
+    <circle cx="70"  cy="70"  r="1.5" fill="#B8965A" opacity=".2"/>
+    <circle cx="110" cy="112" r="1"   fill="#CCA96E" opacity=".15"/>
+  </svg>
+</div>
 
   <div id="cur"></div>
   <div id="cur-r"></div>
@@ -114,19 +149,75 @@
       <div class="scroll-line"></div>
     </div>
   </section>
+  <div aria-hidden="true">
+    <svg class="kaz-ornament" viewBox="0 0 1200 28" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+      <pattern id="kaz0" x="0" y="0" width="120" height="28" patternUnits="userSpaceOnUse">
+        <!-- Основная линия -->
+        <line x1="0" y1="14" x2="120" y2="14" stroke="#B8965A" stroke-width="1"/>
+        <!-- Рог мүйіз -->
+        <path d="M10 14 Q20 4 30 14 Q40 24 50 14" stroke="#B8965A" stroke-width="1.2" fill="none"/>
+        <path d="M70 14 Q80 4 90 14 Q100 24 110 14" stroke="#B8965A" stroke-width="1.2" fill="none"/>
+        <!-- Центральный ромб -->
+        <path d="M60 8 L66 14 L60 20 L54 14 Z" stroke="#B8965A" stroke-width="1" fill="none"/>
+        <!-- Точки -->
+        <circle cx="30" cy="14" r="2" fill="#B8965A"/>
+        <circle cx="90" cy="14" r="2" fill="#B8965A"/>
+        <circle cx="0"  cy="14" r="1.5" fill="#B8965A"/>
+        <circle cx="120" cy="14" r="1.5" fill="#B8965A"/>
+      </pattern>
+      <rect width="1200" height="28" fill="url(#kaz0)"/>
+    </svg>
+  </div>  
 
-  <!-- ═══ QUOTE ═══ -->
-  <section id="quote-sec" class="sec-pad sec-center">
-    <div class="quote-wrap reveal">
-      <div class="quote-mark">"</div>
-      <p class="quote-text"
-        data-kz="Шын махаббат — бұл бір-бірін қарап отырмай, бірге алдыға қарау."
-        data-ru="Любовь — это не смотреть друг на друга, а смотреть вместе в одном направлении.">
-        Шын махаббат — бұл бір-бірін қарап отырмай, бірге алдыға қарау.
+  <!-- ═══ INVITE ═══ -->
+  <section id="invite" class="sec-pad sec-center">
+    <div class="invite-card reveal">
+      <svg class="invite-flower-tl" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <path d="M70 70 Q40 40 10 5"  stroke="#B8965A" stroke-width=".8" opacity=".4"/>
+        <path d="M65 70 Q35 42 8 12"  stroke="#B8965A" stroke-width=".6" opacity=".25"/>
+        <ellipse cx="35" cy="35" rx="8" ry="4" transform="rotate(-45 35 35)" fill="#B8965A" opacity=".2"/>
+        <ellipse cx="22" cy="22" rx="6" ry="3" transform="rotate(-40 22 22)" fill="#B8965A" opacity=".15"/>
+        <ellipse cx="50" cy="50" rx="7" ry="3" transform="rotate(-50 50 50)" fill="#B8965A" opacity=".18"/>
+        <circle cx="30" cy="32" r="3" fill="#CCA96E" opacity=".25"/>
+        <circle cx="48" cy="46" r="2" fill="#B8965A" opacity=".2"/>
+      </svg>
+      <div class="invite-orn">◆</div>
+      <p class="invite-text" id="itext-kz">
+        Қадірлі ағайын-туыс, бауырлар мен достар!<br/>
+        Сіздерді <strong>Валерий мен Адияның</strong> үйлену тойына<br/>
+        арналған ақ дастарханымыздың қадірлі қонағы<br/>
+        болуға шақырамыз.<br/>
+        Келіп, қуанышымыздың куәсі болыңыздар!
       </p>
-      <p class="quote-author">— Antoine de Saint-Exupéry</p>
+      <p class="invite-text" id="itext-ru" hidden>
+        Дорогие родные и друзья!<br/>
+        С огромной радостью приглашаем вас разделить<br/>
+        вместе с нами особенный день —<br/>
+        <strong>свадьбу Валерия и Адии.</strong><br/>
+        Ваше присутствие станет самым дорогим подарком для нас.
+      </p>
     </div>
   </section>
+
+  <div aria-hidden="true">
+    <svg class="kaz-ornament" viewBox="0 0 1200 28" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+      <pattern id="kaz1" x="0" y="0" width="120" height="28" patternUnits="userSpaceOnUse">
+        <!-- Основная линия -->
+        <line x1="0" y1="14" x2="120" y2="14" stroke="#B8965A" stroke-width="1"/>
+        <!-- Рог мүйіз -->
+        <path d="M10 14 Q20 4 30 14 Q40 24 50 14" stroke="#B8965A" stroke-width="1.2" fill="none"/>
+        <path d="M70 14 Q80 4 90 14 Q100 24 110 14" stroke="#B8965A" stroke-width="1.2" fill="none"/>
+        <!-- Центральный ромб -->
+        <path d="M60 8 L66 14 L60 20 L54 14 Z" stroke="#B8965A" stroke-width="1" fill="none"/>
+        <!-- Точки -->
+        <circle cx="30" cy="14" r="2" fill="#B8965A"/>
+        <circle cx="90" cy="14" r="2" fill="#B8965A"/>
+        <circle cx="0"  cy="14" r="1.5" fill="#B8965A"/>
+        <circle cx="120" cy="14" r="1.5" fill="#B8965A"/>
+      </pattern>
+      <rect width="1200" height="28" fill="url(#kaz1)"/>
+    </svg>
+  </div>  
 
   <!-- ═══ HOST ═══ -->
   <section id="host" class="sec-pad sec-center">
@@ -140,41 +231,129 @@
       <span class="orn-sym">◆ ◆ ◆</span>
     </div>
   </section>
+  <div aria-hidden="true">
+    <svg class="kaz-ornament" viewBox="0 0 1200 28" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+      <pattern id="kaz2" x="0" y="0" width="120" height="28" patternUnits="userSpaceOnUse">
+        <!-- Основная линия -->
+        <line x1="0" y1="14" x2="120" y2="14" stroke="#B8965A" stroke-width="1"/>
+        <!-- Рог мүйіз -->
+        <path d="M10 14 Q20 4 30 14 Q40 24 50 14" stroke="#B8965A" stroke-width="1.2" fill="none"/>
+        <path d="M70 14 Q80 4 90 14 Q100 24 110 14" stroke="#B8965A" stroke-width="1.2" fill="none"/>
+        <!-- Центральный ромб -->
+        <path d="M60 8 L66 14 L60 20 L54 14 Z" stroke="#B8965A" stroke-width="1" fill="none"/>
+        <!-- Точки -->
+        <circle cx="30" cy="14" r="2" fill="#B8965A"/>
+        <circle cx="90" cy="14" r="2" fill="#B8965A"/>
+        <circle cx="0"  cy="14" r="1.5" fill="#B8965A"/>
+        <circle cx="120" cy="14" r="1.5" fill="#B8965A"/>
+      </pattern>
+      <rect width="1200" height="28" fill="url(#kaz2)"/>
+    </svg>
+  </div>
 
   <!-- ═══ DETAILS ═══ -->
   <section id="details" class="sec-pad sec-center">
     <p class="sec-label reveal"
-      data-kz="Той туралы ақпарат"
-      data-ru="О мероприятии">
-      Той туралы ақпарат
+      data-kz="Күні мен уақыты"
+      data-ru="Дата и время">
+      Күні мен уақыты
     </p>
-    <h2 class="sec-title reveal r-delay-1"
-      data-kz="Күні мен <em>орны</em>"
-      data-ru="Дата и <em>место</em>">
-      Күні мен <em>орны</em>
-    </h2>
 
-    <div class="details-grid">
-      <div class="detail-card reveal r-delay-1">
-        <div class="detail-icon">◈</div>
-        <p class="detail-label" data-kz="Күні" data-ru="Дата">Күні</p>
-        <p class="detail-value" data-kz="29 тамыз 2026" data-ru="29 август 2026">29 тамыз 2026</p>
-        <p class="detail-sub" data-kz="сенбі" data-ru="суббота">сенбі</p>
+    <div class="cal-wrap reveal r-delay-1">
+      <div class="cal-header">
+        <span class="cal-month"
+          data-kz="Тамыз 2026"
+          data-ru="Август 2026">
+          Тамыз 2026
+        </span>
       </div>
-      <div class="detail-card reveal r-delay-2">
-        <div class="detail-icon">◈</div>
-        <p class="detail-label" data-kz="Уақыты" data-ru="Время">Уақыты</p>
-        <p class="detail-value">17:00</p>
-        <p class="detail-sub" data-kz="Қонақтарды қабылдау" data-ru="Сбор гостей">Қонақтарды қабылдау</p>
+
+      <div class="cal-weekdays">
+        <span data-kz="Дс" data-ru="Пн">Дс</span>
+        <span data-kz="Сс" data-ru="Вт">Сс</span>
+        <span data-kz="Ср" data-ru="Ср">Ср</span>
+        <span data-kz="Бс" data-ru="Чт">Бс</span>
+        <span data-kz="Жм" data-ru="Пт">Жм</span>
+        <span data-kz="Сн" data-ru="Сб">Сн</span>
+        <span data-kz="Жк" data-ru="Вс">Жк</span>
       </div>
-      <div class="detail-card reveal r-delay-3">
-        <div class="detail-icon">◈</div>
-        <p class="detail-label" data-kz="Мекен-жайы" data-ru="Адрес">Мекен-жайы</p>
-        <p class="detail-value" data-kz="«Астана» мейрамханасы" data-ru="Ресторан «Астана»">«Астана» мейрамханасы</p>
-        <p class="detail-sub" data-kz="Семей қаласы" data-ru="г. Семей">Семей қаласы</p>
+
+      <div class="cal-grid">
+        <div class="cal-day empty"></div>
+        <div class="cal-day empty"></div>
+        <div class="cal-day empty"></div>
+        <div class="cal-day empty"></div>
+        <div class="cal-day empty"></div>
+        <div class="cal-day">1</div>
+        <div class="cal-day">2</div>
+        <div class="cal-day">3</div>
+        <div class="cal-day">4</div>
+        <div class="cal-day">5</div>
+        <div class="cal-day">6</div>
+        <div class="cal-day">7</div>
+        <div class="cal-day">8</div>
+        <div class="cal-day">9</div>
+        <div class="cal-day">10</div>
+        <div class="cal-day">11</div>
+        <div class="cal-day">12</div>
+        <div class="cal-day">13</div>
+        <div class="cal-day">14</div>
+        <div class="cal-day">15</div>
+        <div class="cal-day">16</div>
+        <div class="cal-day">17</div>
+        <div class="cal-day">18</div>
+        <div class="cal-day">19</div>
+        <div class="cal-day">20</div>
+        <div class="cal-day">21</div>
+        <div class="cal-day">22</div>
+        <div class="cal-day">23</div>
+        <div class="cal-day">24</div>
+        <div class="cal-day">25</div>
+        <div class="cal-day">26</div>
+        <div class="cal-day">27</div>
+        <div class="cal-day">28</div>
+        <div class="cal-day marked">
+          29
+          <span class="cal-mark-dot"></span>
+        </div>
+        <div class="cal-day">30</div>
+        <div class="cal-day">31</div>
+      </div>
+
+      <div class="cal-footer">
+        <span class="cal-footer-day"
+          data-kz="сенбі"
+          data-ru="суббота">
+          сенбі
+        </span>
+        <span class="cal-footer-sep">·</span>
+        <span class="cal-footer-time"
+          data-kz="Басталуы 17:00"
+          data-ru="Начало в 17:00">
+          Басталуы 17:00
+        </span>
       </div>
     </div>
   </section>
+  <div aria-hidden="true">
+    <svg class="kaz-ornament" viewBox="0 0 1200 28" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+      <pattern id="kaz3" x="0" y="0" width="120" height="28" patternUnits="userSpaceOnUse">
+        <!-- Основная линия -->
+        <line x1="0" y1="14" x2="120" y2="14" stroke="#B8965A" stroke-width="1"/>
+        <!-- Рог мүйіз -->
+        <path d="M10 14 Q20 4 30 14 Q40 24 50 14" stroke="#B8965A" stroke-width="1.2" fill="none"/>
+        <path d="M70 14 Q80 4 90 14 Q100 24 110 14" stroke="#B8965A" stroke-width="1.2" fill="none"/>
+        <!-- Центральный ромб -->
+        <path d="M60 8 L66 14 L60 20 L54 14 Z" stroke="#B8965A" stroke-width="1" fill="none"/>
+        <!-- Точки -->
+        <circle cx="30" cy="14" r="2" fill="#B8965A"/>
+        <circle cx="90" cy="14" r="2" fill="#B8965A"/>
+        <circle cx="0"  cy="14" r="1.5" fill="#B8965A"/>
+        <circle cx="120" cy="14" r="1.5" fill="#B8965A"/>
+      </pattern>
+      <rect width="1200" height="28" fill="url(#kaz3)"/>
+    </svg>
+  </div>
 
   <!-- ═══ LOCATION ═══ -->
   <section id="location" class="sec-pad sec-center">
@@ -218,43 +397,25 @@
       <span data-kz="Бағыт құру" data-ru="Построить маршрут">Бағыт құру</span>
     </a>
   </section>
-
-  <!-- ═══ PROGRAM ═══ -->
-  <!-- <section id="program" class="sec-pad sec-center">
-    <p class="sec-label reveal" data-kz="Той бағдарламасы" data-ru="Программа дня">Той бағдарламасы</p>
-    <h2 class="sec-title reveal r-delay-1"
-      data-kz="Той <em>күні</em>"
-      data-ru="День <em>торжества</em>">
-      Той <em>күні</em>
-    </h2>
-
-    <div class="program-timeline">
-      <div class="prog-item reveal r-delay-1">
-        <div class="prog-time">17:00</div>
-        <div class="prog-dot"><span></span></div>
-        <div class="prog-info">
-          <p class="prog-title" data-kz="Қонақтардың жиналуы" data-ru="Сбор гостей">Қонақтардың жиналуы</p>
-          <p class="prog-desc" data-kz="Қош келдіңіздер, фотосессия" data-ru="Приветствие, фотосессия">Қош келдіңіздер, фотосессия</p>
-        </div>
-      </div>
-      <div class="prog-item reveal r-delay-2">
-        <div class="prog-time">18:00</div>
-        <div class="prog-dot"><span></span></div>
-        <div class="prog-info">
-          <p class="prog-title" data-kz="Тойдың басталуы" data-ru="Начало торжества">Тойдың басталуы</p>
-          <p class="prog-desc" data-kz="Салтанатты кеш ашылады" data-ru="Открытие праздничного вечера">Салтанатты кеш ашылады</p>
-        </div>
-      </div>
-      <div class="prog-item reveal r-delay-3">
-        <div class="prog-time">18:30</div>
-        <div class="prog-dot"><span></span></div>
-        <div class="prog-info">
-          <p class="prog-title" data-kz="Беташар" data-ru="Беташар">Беташар</p>
-          <p class="prog-desc" data-kz="Дәстүрлі беташар рәсімі" data-ru="Традиционный обряд беташар">Дәстүрлі беташар рәсімі</p>
-        </div>
-      </div>
-    </div>
-  </section> -->
+  <div aria-hidden="true">
+    <svg class="kaz-ornament" viewBox="0 0 1200 28" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+      <pattern id="kaz4" x="0" y="0" width="120" height="28" patternUnits="userSpaceOnUse">
+        <!-- Основная линия -->
+        <line x1="0" y1="14" x2="120" y2="14" stroke="#B8965A" stroke-width="1"/>
+        <!-- Рог мүйіз -->
+        <path d="M10 14 Q20 4 30 14 Q40 24 50 14" stroke="#B8965A" stroke-width="1.2" fill="none"/>
+        <path d="M70 14 Q80 4 90 14 Q100 24 110 14" stroke="#B8965A" stroke-width="1.2" fill="none"/>
+        <!-- Центральный ромб -->
+        <path d="M60 8 L66 14 L60 20 L54 14 Z" stroke="#B8965A" stroke-width="1" fill="none"/>
+        <!-- Точки -->
+        <circle cx="30" cy="14" r="2" fill="#B8965A"/>
+        <circle cx="90" cy="14" r="2" fill="#B8965A"/>
+        <circle cx="0"  cy="14" r="1.5" fill="#B8965A"/>
+        <circle cx="120" cy="14" r="1.5" fill="#B8965A"/>
+      </pattern>
+      <rect width="1200" height="28" fill="url(#kaz4)"/>
+    </svg>
+  </div>
 
   <!-- ═══ GALLERY ═══ -->
   <section id="gallery-sec" class="sec-pad sec-center">
@@ -282,6 +443,25 @@
       <div class="slider-progress"><div class="slider-progress-bar" id="slider-progress-bar"></div></div>
     </div>
   </section>
+  <div aria-hidden="true">
+    <svg class="kaz-ornament" viewBox="0 0 1200 28" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+      <pattern id="kaz5" x="0" y="0" width="120" height="28" patternUnits="userSpaceOnUse">
+        <!-- Основная линия -->
+        <line x1="0" y1="14" x2="120" y2="14" stroke="#B8965A" stroke-width="1"/>
+        <!-- Рог мүйіз -->
+        <path d="M10 14 Q20 4 30 14 Q40 24 50 14" stroke="#B8965A" stroke-width="1.2" fill="none"/>
+        <path d="M70 14 Q80 4 90 14 Q100 24 110 14" stroke="#B8965A" stroke-width="1.2" fill="none"/>
+        <!-- Центральный ромб -->
+        <path d="M60 8 L66 14 L60 20 L54 14 Z" stroke="#B8965A" stroke-width="1" fill="none"/>
+        <!-- Точки -->
+        <circle cx="30" cy="14" r="2" fill="#B8965A"/>
+        <circle cx="90" cy="14" r="2" fill="#B8965A"/>
+        <circle cx="0"  cy="14" r="1.5" fill="#B8965A"/>
+        <circle cx="120" cy="14" r="1.5" fill="#B8965A"/>
+      </pattern>
+      <rect width="1200" height="28" fill="url(#kaz5)"/>
+    </svg>
+  </div>
 
   <!-- ═══ WISHES ═══ -->
   <section id="wishes-sec" class="sec-pad sec-center">
@@ -320,9 +500,58 @@
       </button>
     </div>
   </section>
+  <div aria-hidden="true">
+    <svg class="kaz-ornament" viewBox="0 0 1200 28" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+      <pattern id="kaz6" x="0" y="0" width="120" height="28" patternUnits="userSpaceOnUse">
+        <!-- Основная линия -->
+        <line x1="0" y1="14" x2="120" y2="14" stroke="#B8965A" stroke-width="1"/>
+        <!-- Рог мүйіз -->
+        <path d="M10 14 Q20 4 30 14 Q40 24 50 14" stroke="#B8965A" stroke-width="1.2" fill="none"/>
+        <path d="M70 14 Q80 4 90 14 Q100 24 110 14" stroke="#B8965A" stroke-width="1.2" fill="none"/>
+        <!-- Центральный ромб -->
+        <path d="M60 8 L66 14 L60 20 L54 14 Z" stroke="#B8965A" stroke-width="1" fill="none"/>
+        <!-- Точки -->
+        <circle cx="30" cy="14" r="2" fill="#B8965A"/>
+        <circle cx="90" cy="14" r="2" fill="#B8965A"/>
+        <circle cx="0"  cy="14" r="1.5" fill="#B8965A"/>
+        <circle cx="120" cy="14" r="1.5" fill="#B8965A"/>
+      </pattern>
+      <rect width="1200" height="28" fill="url(#kaz6)"/>
+    </svg>
+  </div>
 
   <!-- ═══ SEE YOU ═══ -->
   <section id="seeyou" class="sec-pad sec-center">
+    <svg class="seeyou-deco-left" viewBox="0 0 120 200" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path d="M100 190 Q60 140 20 80 Q10 50 30 10" stroke="#B8965A" stroke-width="1.2"/>
+      <path d="M90 185 Q55 135 18 75" stroke="#B8965A" stroke-width=".7" opacity=".6"/>
+      <ellipse cx="55" cy="120" rx="14" ry="6" transform="rotate(-50 55 120)" fill="#B8965A" opacity=".8"/>
+      <ellipse cx="40" cy="90"  rx="12" ry="5" transform="rotate(-45 40 90)"  fill="#B8965A" opacity=".7"/>
+      <ellipse cx="70" cy="150" rx="16" ry="7" transform="rotate(-55 70 150)" fill="#B8965A" opacity=".7"/>
+      <ellipse cx="30" cy="60"  rx="10" ry="4" transform="rotate(-40 30 60)"  fill="#B8965A" opacity=".6"/>
+      <circle cx="50"  cy="115" r="3.5" fill="#CCA96E" opacity=".9"/>
+      <circle cx="68"  cy="145" r="2.5" fill="#B8965A" opacity=".8"/>
+      <circle cx="35"  cy="85"  r="2"   fill="#CCA96E" opacity=".7"/>
+      <circle cx="25"  cy="55"  r="1.5" fill="#B8965A" opacity=".6"/>
+      <!-- Маленькие листочки -->
+      <ellipse cx="80" cy="165" rx="8" ry="3.5" transform="rotate(-60 80 165)" fill="#B8965A" opacity=".5"/>
+      <ellipse cx="22" cy="40"  rx="7" ry="3"   transform="rotate(-35 22 40)"  fill="#B8965A" opacity=".5"/>
+    </svg>
+
+    <svg class="seeyou-deco-right" viewBox="0 0 120 200" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path d="M100 190 Q60 140 20 80 Q10 50 30 10" stroke="#B8965A" stroke-width="1.2"/>
+      <path d="M90 185 Q55 135 18 75" stroke="#B8965A" stroke-width=".7" opacity=".6"/>
+      <ellipse cx="55" cy="120" rx="14" ry="6" transform="rotate(-50 55 120)" fill="#B8965A" opacity=".8"/>
+      <ellipse cx="40" cy="90"  rx="12" ry="5" transform="rotate(-45 40 90)"  fill="#B8965A" opacity=".7"/>
+      <ellipse cx="70" cy="150" rx="16" ry="7" transform="rotate(-55 70 150)" fill="#B8965A" opacity=".7"/>
+      <ellipse cx="30" cy="60"  rx="10" ry="4" transform="rotate(-40 30 60)"  fill="#B8965A" opacity=".6"/>
+      <circle cx="50"  cy="115" r="3.5" fill="#CCA96E" opacity=".9"/>
+      <circle cx="68"  cy="145" r="2.5" fill="#B8965A" opacity=".8"/>
+      <circle cx="35"  cy="85"  r="2"   fill="#CCA96E" opacity=".7"/>
+      <circle cx="25"  cy="55"  r="1.5" fill="#B8965A" opacity=".6"/>
+      <ellipse cx="80" cy="165" rx="8" ry="3.5" transform="rotate(-60 80 165)" fill="#B8965A" opacity=".5"/>
+      <ellipse cx="22" cy="40"  rx="7" ry="3"   transform="rotate(-35 22 40)"  fill="#B8965A" opacity=".5"/>
+    </svg>
     <div class="seeyou-wrap reveal">
       <p class="seeyou-label" data-kz="Кездескенше" data-ru="До встречи">Кездескенше</p>
       <h2 class="seeyou-title"
@@ -334,6 +563,25 @@
       <div class="seeyou-hearts">◆ ◆ ◆</div>
     </div>
   </section>
+  <div aria-hidden="true">
+    <svg class="kaz-ornament" viewBox="0 0 1200 28" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+      <pattern id="kaz7" x="0" y="0" width="120" height="28" patternUnits="userSpaceOnUse">
+        <!-- Основная линия -->
+        <line x1="0" y1="14" x2="120" y2="14" stroke="#B8965A" stroke-width="1"/>
+        <!-- Рог мүйіз -->
+        <path d="M10 14 Q20 4 30 14 Q40 24 50 14" stroke="#B8965A" stroke-width="1.2" fill="none"/>
+        <path d="M70 14 Q80 4 90 14 Q100 24 110 14" stroke="#B8965A" stroke-width="1.2" fill="none"/>
+        <!-- Центральный ромб -->
+        <path d="M60 8 L66 14 L60 20 L54 14 Z" stroke="#B8965A" stroke-width="1" fill="none"/>
+        <!-- Точки -->
+        <circle cx="30" cy="14" r="2" fill="#B8965A"/>
+        <circle cx="90" cy="14" r="2" fill="#B8965A"/>
+        <circle cx="0"  cy="14" r="1.5" fill="#B8965A"/>
+        <circle cx="120" cy="14" r="1.5" fill="#B8965A"/>
+      </pattern>
+      <rect width="1200" height="28" fill="url(#kaz7)"/>
+    </svg>
+  </div>
 
   <!-- ═══ RSVP ═══ -->
   <section id="rsvp-sec" class="sec-pad sec-center">
@@ -398,6 +646,25 @@
       </div>
     </div>
   </section>
+  <div aria-hidden="true">
+    <svg class="kaz-ornament" viewBox="0 0 1200 28" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+      <pattern id="kaz8" x="0" y="0" width="120" height="28" patternUnits="userSpaceOnUse">
+        <!-- Основная линия -->
+        <line x1="0" y1="14" x2="120" y2="14" stroke="#B8965A" stroke-width="1"/>
+        <!-- Рог мүйіз -->
+        <path d="M10 14 Q20 4 30 14 Q40 24 50 14" stroke="#B8965A" stroke-width="1.2" fill="none"/>
+        <path d="M70 14 Q80 4 90 14 Q100 24 110 14" stroke="#B8965A" stroke-width="1.2" fill="none"/>
+        <!-- Центральный ромб -->
+        <path d="M60 8 L66 14 L60 20 L54 14 Z" stroke="#B8965A" stroke-width="1" fill="none"/>
+        <!-- Точки -->
+        <circle cx="30" cy="14" r="2" fill="#B8965A"/>
+        <circle cx="90" cy="14" r="2" fill="#B8965A"/>
+        <circle cx="0"  cy="14" r="1.5" fill="#B8965A"/>
+        <circle cx="120" cy="14" r="1.5" fill="#B8965A"/>
+      </pattern>
+      <rect width="1200" height="28" fill="url(#kaz8)"/>
+    </svg>
+  </div>  
 
   <!-- ═══ FOOTER ═══ -->
   <footer>

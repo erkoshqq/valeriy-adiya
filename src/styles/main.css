@@ -122,7 +122,12 @@ body {
 /* ════════════════════════════════════════
    PARTICLES
 ════════════════════════════════════════ */
-#particles-canvas { position:fixed;inset:0;pointer-events:none;z-index:1; }
+#particles-canvas {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 3;
+}
 
 /* ════════════════════════════════════════
    LANG / MUSIC
@@ -328,52 +333,8 @@ section   { position:relative;z-index:2; }
 .orn-sym { font-size: 10px; color: var(--gold); letter-spacing: .2em; }
 
 /* ════════════════════════════════════════
-   QUOTE
-════════════════════════════════════════ */
-#quote-sec {
-  background: var(--dark2);
-  border-top: 1px solid var(--goldborder);
-  border-bottom: 1px solid var(--goldborder);
-}
-.quote-wrap { max-width: 620px; margin: 0 auto; }
-.quote-mark {
-  font-family: var(--ff-d); font-size: 80px;
-  line-height: .6; color: var(--gold); opacity: .3;
-  margin-bottom: 16px;
-}
-.quote-text {
-  font-family: var(--ff-d); font-size: clamp(18px, 3vw, 26px);
-  font-style: italic; font-weight: 600;
-  color: var(--text); line-height: 1.7;
-  margin-bottom: 16px;
-}
-.quote-author {
-  font-family: var(--ff-b); font-size: 10px; font-weight: 900;
-  letter-spacing: .18em; text-transform: uppercase;
-  color: var(--gold); opacity: .7;
-}
-
-/* ════════════════════════════════════════
    DETAILS
 ════════════════════════════════════════ */
-#details { background: var(--dark); }
-.details-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 20px; margin-top: 48px;
-  max-width: 900px; margin-left: auto; margin-right: auto;
-}
-.detail-card {
-  background: var(--dark3);
-  border: 1px solid var(--goldborder);
-  border-radius: var(--r);
-  padding: 36px 24px; text-align: center;
-  transition: transform .35s, box-shadow .35s;
-}
-.detail-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 12px 40px rgba(201,165,90,.1);
-}
 .detail-icon { font-size: 14px; color: var(--gold); margin-bottom: 16px; letter-spacing: .1em; }
 .detail-label { font-family: var(--ff-b); font-size: 12px; letter-spacing: .22em; text-transform: uppercase; color: var(--gold); margin-bottom: 10px; font-weight: 900; }
 .detail-value { font-family:var(--ff-d);font-size:clamp(24px,4vw,30px);font-weight:900;color:var(--text);line-height:1.3; }
@@ -391,99 +352,6 @@ section   { position:relative;z-index:2; }
 }
 .map-wrap iframe { width:100%;height:100%;border:0;filter:grayscale(.2) brightness(1.02); }
 
-/* ════════════════════════════════════════
-   PROGRAM
-════════════════════════════════════════ */
-#program { background: var(--dark); }
-
-.program-timeline {
-  max-width: 560px;
-  margin: 56px auto 0;
-  position: relative;
-}
-
-/* Вертикальная линия по центру — на всех экранах */
-.program-timeline::before {
-  content: '';
-  position: absolute;
-  left: 50%;
-  top: 0; bottom: 0;
-  width: 1px;
-  background: linear-gradient(to bottom, transparent, var(--goldborder) 20%, var(--goldborder) 80%, transparent);
-  transform: translateX(-50%);
-}
-
-.prog-item {
-  display: grid;
-  grid-template-columns: 1fr 32px 1fr;
-  align-items: center;
-  margin-bottom: 52px;
-  gap: 0;
-}
-
-/* Нечётные — время слева, текст справа */
-.prog-item:nth-child(odd) .prog-time {
-  text-align: right;
-  padding-right: 20px;
-  grid-column: 1;
-}
-.prog-item:nth-child(odd) .prog-dot {
-  grid-column: 2;
-}
-.prog-item:nth-child(odd) .prog-info {
-  text-align: left;
-  padding-left: 20px;
-  grid-column: 3;
-}
-
-/* Чётные — время справа, текст слева */
-.prog-item:nth-child(even) .prog-time {
-  text-align: left;
-  padding-left: 20px;
-  grid-column: 3;
-  grid-row: 1;
-}
-.prog-item:nth-child(even) .prog-dot {
-  grid-column: 2;
-  grid-row: 1;
-}
-.prog-item:nth-child(even) .prog-info {
-  text-align: right;
-  padding-right: 20px;
-  grid-column: 1;
-  grid-row: 1;
-}
-
-.prog-dot {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  z-index: 1;
-}
-.prog-dot span {
-  width: 10px; height: 10px;
-  border-radius: 50%;
-  background: var(--gold);
-  box-shadow: 0 0 0 4px var(--dark), 0 0 0 5px var(--goldborder);
-  display: block;
-}
-
-.prog-time {
-  font-family: var(--ff-d);
-  font-size: clamp(24px, 4vw, 32px);
-  font-weight: 900;
-  color: var(--gold);
-  line-height: 1;
-}
-.prog-title {
-  font-family: var(--ff-d);
-  font-size: clamp(16px, 2.5vw, 20px);
-  font-weight: 900;
-  color: var(--text);
-  margin-bottom: 4px;
-}
-.prog-desc { font-family: var(--ff-b); font-size: 12px; color: var(--textmid); line-height: 1.5; font-weight: 900; }
 /* ════════════════════════════════════════
    GALLERY SLIDER
 ════════════════════════════════════════ */
@@ -775,4 +643,298 @@ footer {
 .location-card:hover {
   transform: translateY(-4px);
   box-shadow: 0 12px 40px rgba(201, 165, 90, .1);
+}
+
+/* ════ CALENDAR ════ */
+.cal-wrap {
+  display: inline-block;
+  margin-top: 44px;
+  background: var(--dark3);
+  border: 1px solid var(--goldborder);
+  border-radius: 28px;
+  padding: 32px 28px 24px;
+  box-shadow: 0 12px 48px rgba(184, 150, 90, .1),
+              inset 0 1px 0 rgba(255, 255, 255, .6);
+  min-width: 300px;
+  max-width: 360px;
+  width: 100%;
+}
+
+.cal-header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+.cal-month {
+  font-family: var(--ff-d);
+  font-size: 30px;
+  font-weight: 900;
+  font-style: italic;
+  color: var(--gold);
+  letter-spacing: .04em;
+}
+
+.cal-weekdays {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  margin-bottom: 8px;
+}
+.cal-weekdays span {
+  font-family: var(--ff-b);
+  font-size: 12px;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--gold);
+  text-align: center;
+  padding: 4px 0;
+  font-weight: 900;
+}
+
+.cal-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 2px;
+}
+.cal-day {
+  position: relative;
+  aspect-ratio: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--ff-b);
+  font-size: 15px;
+  font-weight: 900;
+  color: var(--textmid);
+  border-radius: 50%;
+  transition: background .2s;
+}
+.cal-day.empty { pointer-events: none; }
+
+.cal-day.marked {
+  background: linear-gradient(135deg, var(--gold), var(--goldlt));
+  color: #fff;
+  font-weight: 900;
+  box-shadow: 0 4px 16px rgba(184, 150, 90, .35);
+  animation: calPulse 3s ease-in-out infinite;
+}
+@keyframes calPulse {
+  0%, 100% { box-shadow: 0 4px 16px rgba(184, 150, 90, .35); }
+  50%       { box-shadow: 0 4px 28px rgba(184, 150, 90, .6);  }
+}
+
+.cal-mark-dot {
+  position: absolute;
+  bottom: 3px; left: 50%;
+  transform: translateX(-50%);
+  width: 4px; height: 4px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, .7);
+}
+
+.cal-footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 20px;
+  padding-top: 18px;
+  border-top: 1px solid var(--goldborder);
+}
+.cal-footer-day,
+.cal-footer-time {
+  font-family: var(--ff-b);
+  font-size: 12px;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  color: var(--gold);
+  font-weight: 900;
+}
+.cal-footer-sep {
+  color: var(--goldborder);
+  font-size: 14px;
+}
+
+/* ════ INVITE ════ */
+#invite { background: var(--dark); }
+
+.invite-card {
+  max-width: 640px;
+  margin: 0 auto;
+  text-align: center;
+}
+.invite-orn {
+  font-size: 12px;
+  color: var(--gold);
+  letter-spacing: .2em;
+  margin-bottom: 24px;
+  display: block;
+}
+.invite-text {
+  font-family: var(--ff-d);
+  font-size: clamp(24px, 3vw, 30px);
+  font-weight: 900;
+  line-height: 1.9;
+  color: var(--textmid);
+}
+.invite-text strong {
+  color: var(--text);
+  font-weight: 900;
+}
+
+/* ════════════════════════════════════════
+   FIXED DECO BRANCHES
+════════════════════════════════════════ */
+.deco-fixed {
+  position: fixed;
+  width: 220px; height: 220px;
+  pointer-events: none;
+  z-index: 2;
+}
+.deco-tl { top: -20px; left: -20px; }
+.deco-br { bottom: -20px; right: -20px; transform: rotate(180deg); }
+
+/* ════════════════════════════════════════
+   SECTION ORNAMENT BORDERS
+════════════════════════════════════════ */
+.orn-border {
+  width: 100%;
+  height: 32px;
+  opacity: .2;
+  display: block;
+  overflow: hidden;
+}
+
+/* ════════════════════════════════════════
+   CORNER FRAMES ON CARDS
+════════════════════════════════════════ */
+.detail-card   { position: relative; overflow: hidden; }
+.location-card { position: relative; overflow: hidden; }
+.invite-card   { position: relative; }
+
+.detail-card::before,
+.detail-card::after,
+.location-card::before,
+.location-card::after {
+  content: '';
+  position: absolute;
+  width: 18px; height: 18px;
+  border-color: var(--gold);
+  border-style: solid;
+  opacity: .35;
+}
+.detail-card::before,
+.location-card::before {
+  top: 10px; left: 10px;
+  border-width: 1px 0 0 1px;
+}
+.detail-card::after,
+.location-card::after {
+  bottom: 10px; right: 10px;
+  border-width: 0 1px 1px 0;
+}
+
+/* ════════════════════════════════════════
+   INVITE CARD CORNERS
+════════════════════════════════════════ */
+.invite-card::before,
+.invite-card::after {
+  content: '';
+  position: absolute;
+  width: 28px; height: 28px;
+  border-color: var(--gold);
+  border-style: solid;
+  opacity: .3;
+}
+.invite-card::before { top: 0; left: 0; border-width: 1px 0 0 1px; }
+.invite-card::after  { bottom: 0; right: 0; border-width: 0 1px 1px 0; }
+
+/* ════════════════════════════════════════
+   KAZAKH ORNAMENT DIVIDERS
+════════════════════════════════════════ */
+.kaz-ornament {
+  width: 100%;
+  height: 28px;
+  margin: 0;
+  opacity: .15;
+  display: block;
+}
+
+.invite-flower-tl {
+  position: absolute;
+  top: -8px; right: -8px;
+  width: 90px; height: 90px;
+  pointer-events: none;
+  transform: rotate(180deg);
+}
+
+/* ════ BACKGROUND PATTERN ════ */
+#invite, #host, #details, #wishes-sec, #rsvp-sec {
+  background-image: radial-gradient(circle, rgba(184,150,90,0.06) 1px, transparent 1px);
+  background-size: 28px 28px;
+}
+
+/* ════ SEEYOU DECOR ════ */
+#seeyou {
+  position: relative;
+  overflow: hidden;
+}
+#seeyou::before,
+#seeyou::after {
+  content: '';
+  position: absolute;
+  width: 260px;
+  height: 260px;
+  background-image:
+    radial-gradient(ellipse 60px 30px at 50% 50%, rgba(184,150,90,0.12) 0%, transparent 100%);
+  border-radius: 50%;
+  pointer-events: none;
+}
+#seeyou::before {
+  top: -60px; left: -60px;
+  background: radial-gradient(ellipse at center, rgba(184,150,90,0.1) 0%, transparent 70%);
+}
+#seeyou::after {
+  bottom: -60px; right: -60px;
+  background: radial-gradient(ellipse at center, rgba(184,150,90,0.1) 0%, transparent 70%);
+}
+
+.seeyou-wrap {
+  position: relative;
+  z-index: 1;
+}
+
+/* Боковые SVG ветки в seeyou */
+.seeyou-deco-left,
+.seeyou-deco-right {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 120px;
+  height: 200px;
+  pointer-events: none;
+  opacity: .25;
+}
+.seeyou-deco-left  { left: 0; }
+.seeyou-deco-right { right: 0; transform: translateY(-50%) scaleX(-1); }
+
+@media (max-width: 600px) {
+  .seeyou-deco-left,
+  .seeyou-deco-right { width: 70px; opacity: .15; }
+}
+
+/* ════ CALENDAR GLOW ════ */
+.cal-day.marked {
+  position: relative;
+}
+.cal-day.marked::before {
+  content: '';
+  position: absolute;
+  inset: -6px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(184,150,90,0.25) 0%, transparent 70%);
+  pointer-events: none;
+  animation: calGlow 3s ease-in-out infinite;
+}
+@keyframes calGlow {
+  0%, 100% { opacity: .5; transform: scale(1); }
+  50%       { opacity: 1;  transform: scale(1.3); }
 }

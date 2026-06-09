@@ -17,6 +17,12 @@ export function setLang(lang) {
     el.placeholder = el.dataset[`${lang}Placeholder`]
   })
 
+  // После всех document.querySelectorAll — добавьте:
+  const itextKz = document.getElementById('itext-kz')
+  const itextRu = document.getElementById('itext-ru')
+  if (itextKz) itextKz.hidden = (lang !== 'kz')
+  if (itextRu) itextRu.hidden = (lang !== 'ru')
+
   const fp = document.getElementById('fp')
   if (fp) fp.textContent = fp.dataset[lang]
 }
